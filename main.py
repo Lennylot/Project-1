@@ -3,6 +3,9 @@ board = [[1,2,3],
          [7,8,9]]
 
 
+def user_input():
+    row_choice = int(input("Enter a number to choose row(0-2): "))
+    column_choice = int(input("Enter a number to choose column(0-2): "))
 
 def player_move(game_board, player, row, column):
     
