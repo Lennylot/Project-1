@@ -5,12 +5,10 @@ board = [[1,2,3],
 
 
 def player_move(game_board, player, row, column):
-    try:
-        game_board[row][column] = player
-        return game_board
-    except:
-        print("Wrong Input!")
-        print("The game only accepts (0,1,2) for rows/columns ")
+    
+    game_board[row][column] = player
+    return game_board
+    
 
 
 def display_board():
@@ -50,17 +48,6 @@ def win_condition():
 
 
 
-play = True
-players = ["x","o"]
-while play:
-    game_won = False
-    while not game_won:
-        display_board()
-        current_player = "x"
-        column_choice = int(input("What column do would you like to pick? (0,1,2): "))
-        row_choice = int(input("What row do would you like to pick? (0,1,2): "))
-        player_move(board,current_player,column_choice,row_choice)
-        win_condition()
 
 
 
