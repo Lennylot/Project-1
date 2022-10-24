@@ -4,7 +4,7 @@ board = [[1,2,3],
 
 
 def user_input():
-    row_choice = int(input("Enter a number to choose row(0-2): "))
+    row_choice = int(input("Enter a number to choose row(0-2): "))          
     column_choice = int(input("Enter a number to choose column(0-2): "))
 
 def player_move(game_board, player, row, column):
@@ -48,6 +48,9 @@ def win_condition():
         check_reversed_diagonal_win.append(board[reversed_cols][reversed_rows])
     if check_reversed_diagonal_win.count(check_reversed_diagonal_win[0]) == len(check_reversed_diagonal_win) and check_reversed_diagonal_win[0] != 0:
             print(f"Player {rows[0]} is the winner by / ")
+
+
+def cpu_move():
 
 
 
