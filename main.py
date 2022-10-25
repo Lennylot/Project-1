@@ -1,6 +1,7 @@
-board = [[0,0,0],
-         [0,0,0],
-         [0,0,0]]
+import random
+board = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
 
 
 def user_input():
@@ -9,9 +10,9 @@ def user_input():
     return row_choice,column_choice
 
 def player_move():
-    player = 1
+    player_piece = "x"
     row_choice,column_choice = user_input()
-    board[row_choice][column_choice] = player
+    board[row_choice][column_choice] = player_piece
     return board
     
 
@@ -52,9 +53,23 @@ def win_condition():
             print(f"Player {rows[0]} is the winner by / ")
 
 
+def cpu_move():
+    cpu_piece = "o"
+    random_row = random.randint(0,2)
+    random_column = random.randint(0, 2)
+    board[random_row][random_column] = cpu_piece
+    return board
+
+
+
+
+
+
+
 
 
 player_move()
+cpu_move()
 display_board()
 win_condition()
 
