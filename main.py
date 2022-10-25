@@ -67,11 +67,13 @@ def cpu_move():
 
 
 
+while True:
+    player_move()
+    cpu_move()
+    display_board()
 
-player_move()
-cpu_move()
-display_board()
-win_condition()
+    if win_condition():
+        break
 
 
 
