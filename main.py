@@ -1,16 +1,18 @@
-board = [[1,2,3],
-         [4,5,6],
-         [7,8,9]]
+board = [[0,0,0],
+         [0,0,0],
+         [0,0,0]]
 
 
 def user_input():
     row_choice = int(input("Enter a number to choose row(0-2): "))          
     column_choice = int(input("Enter a number to choose column(0-2): "))
+    return row_choice,column_choice
 
-def player_move(game_board, player, row, column):
-    
-    game_board[row][column] = player
-    return game_board
+def player_move():
+    player = 1
+    row_choice,column_choice = user_input()
+    board[row_choice][column_choice] = player
+    return board
     
 
 
@@ -50,8 +52,11 @@ def win_condition():
             print(f"Player {rows[0]} is the winner by / ")
 
 
-def cpu_move():
 
+
+player_move()
+display_board()
+win_condition()
 
 
 
