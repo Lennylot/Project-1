@@ -10,7 +10,8 @@ def user_input():
         row_choice = int(input("Enter a number to choose row(0-2): "))
         column_choice = int(input("Enter a number to choose column(0-2): "))
         return row_choice, column_choice
-    except
+    except:
+        error
 
 
 def player_move():
@@ -21,8 +22,9 @@ def player_move():
 
 
 def display_board():
-    for view in board:
-        print(view)
+    print("   0  1  2")
+    for count, row in enumerate(board):
+        print(count,row)
 
 
 def win_condition():
