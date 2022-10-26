@@ -1,7 +1,7 @@
 import random
-board = [[1,2,3],
-         [4,5,6],
-         [7,8,9]]
+board = [[0,0,0],
+         [0,0,0],
+         [0,0,0]]
 
 
 def user_input():
@@ -10,10 +10,11 @@ def user_input():
     return row_choice,column_choice
 
 def player_move():
-    player_piece = "x"
+    player_piece = 1
     row_choice,column_choice = user_input()
     board[row_choice][column_choice] = player_piece
     return board
+
     
 
 
@@ -54,11 +55,12 @@ def win_condition():
 
 
 def cpu_move():
-    cpu_piece = "o"
+    cpu_piece = 2
     random_row = random.randint(0,2)
     random_column = random.randint(0, 2)
     board[random_row][random_column] = cpu_piece
     return board
+    
 
 
 
@@ -67,13 +69,17 @@ def cpu_move():
 
 
 
-while True:
-    player_move()
-    cpu_move()
-    display_board()
+play = True
+while play:
+    game_won = False
+    while not game_won:
+        display_board()
+        player_move()
+        cpu_move()
+        win_condition()
 
-    if win_condition():
-        break
+
+
 
 
 
