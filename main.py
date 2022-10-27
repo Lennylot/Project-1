@@ -6,18 +6,20 @@ board = [[0, 0, 0],
 
 
 def user_input():
-    try:
-        row_choice = int(input("Enter a number to choose row(0-2): "))
-        column_choice = int(input("Enter a number to choose column(0-2): "))
-        return row_choice, column_choice
-    except:
-        error
+    row_choice = int(input("Enter a number to choose row(0-2): "))
+    column_choice = int(input("Enter a number to choose column(0-2): "))
+    return row_choice, column_choice
+
+
 
 
 def player_move():
-    player_piece = 1
-    row_choice, column_choice = user_input()
-    board[row_choice][column_choice] = player_piece
+    try:
+        player_piece = 1
+        row_choice, column_choice = user_input()
+        board[row_choice][column_choice] = player_piece
+    except:
+        print("Make sure to input numbers from (0-2) because the game won't work")
 
 
 
@@ -59,6 +61,8 @@ def win_condition():
         print(f"Player {rows[0]} is the winner by / ")
         return True
 
+    return False
+
 def cpu_move():
     cpu_piece = 2
     random_row = random.randint(0, 2)
@@ -72,13 +76,20 @@ def cpu_move():
 
 
 
-
 while True:
     display_board()
     player_move()
     cpu_move()
+    if board == 1:
+        cpu_move()
     if win_condition():
-       break
+
+        display_board()
+        break
+
+
+
+
 
 
 
